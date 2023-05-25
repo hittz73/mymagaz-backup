@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Каталог{% endblock %}
+
+
+{% block content %}
+    <div class="features">
+        <h1>Каталог</h1>
+        {% for el in product %}
+            <div class="alert alert-dark">
+                <h3>  {{  el.title  }}  </h3>
+                <img width="150px" src={{el.photo.url}} alt="Что-то">
+                <p>   {{  el.full_description }}  </p>
+                <h4>Цена: {{  el.price  }} рублей </h4>
+            </div>
+        {% endfor %}
+     </div>
+{% endblock %}
